@@ -1,0 +1,26 @@
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - mysql_volume:/var/lib/mysql
+    environment:
+      LANG: C.UTF-8
+      TZ: Asia/Tokyo
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: manage-task-app
+    ports:
+      - "3306:3306"
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - .:/server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  mysql_volume:
+    driver: local
