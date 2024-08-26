@@ -1,10 +1,10 @@
-start-ctn:
+start-c:
 	docker compose up -d
 
-stop-ctn:
+stop-c:
 	docker compose down
 
-build-ctn:
+build-c:
 	docker compose build
 
 routes:
