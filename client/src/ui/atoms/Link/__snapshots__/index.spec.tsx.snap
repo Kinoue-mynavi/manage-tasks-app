@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`The \`target\` property is output correctly. 1`] = `
+<body>
+  <div>
+    <a
+      href="http://www.facebook.com"
+      target="_blank"
+    >
+      Facebook
+    </a>
+  </div>
+</body>
+`;
+
+exports[`The \`target\` property is output correctly. 2`] = `
+<body>
+  <div>
+    <a
+      href="http://www.facebook.com"
+      target="_blank"
+    >
+      Facebook
+    </a>
+  </div>
+  <div>
+    <a
+      href="/"
+      target="_self"
+    >
+      Home
+    </a>
+  </div>
+</body>
+`;
