@@ -15,6 +15,8 @@
     "snapshot": "vitest -u"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@tanstack/react-query": "^5.52.2",
     "@types/node": "20.15.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
@@ -22,12 +24,18 @@
     "@vanilla-extract/next-plugin": "^2.3.0",
     "@vanilla-extract/recipes": "0.5.4",
     "axios": "^1.7.5",
+    "js-cookie": "^3.0.5",
     "jsdom": "^22.1.0",
     "next": "14.2.5",
     "react": "18.3.1",
+    "react-cookie": "^7.2.0",
     "react-dom": "18.3.1",
+    "react-hook-form": "^7.53.0",
+    "react-toastify": "^10.0.5",
+    "recoil": "^0.7.7",
     "swr": "^2.2.5",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.0.0",

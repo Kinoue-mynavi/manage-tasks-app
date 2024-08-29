@@ -2,15 +2,27 @@
 
 import React from 'react';
 
-import { useFetchData } from '@/hooks/useFetchData';
-import { Heading } from '@/ui/atoms/Heading';
+import { Heading } from '@/components/ui/atoms/Heading';
+import { Link } from '@/components/ui/atoms/Link';
+import { Text } from '@/components/ui/atoms/Text';
+
+import { useGetCurrentUser } from './state/currentUser';
 
 const Home: React.FC = () => {
-  const data = useFetchData('/tasks');
-  console.log(data);
+  const { currentUser } = useGetCurrentUser();
   return (
     <div>
       <Heading as="h2">Hello World !!</Heading>
+      {currentUser ? (
+        <Text>
+          {`ログイン中のユーザ：${currentUser.name}さん (${currentUser.email})`}
+        </Text>
+      ) : (
+        <>
+          <Text>下記リンクよりログインしてください！</Text>
+          <Link href="/auth/login">ログインページへ</Link>
+        </>
+      )}
     </div>
   );
 };

@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_08_26_061513) do
-  create_table "tasks", charset: "utf8mb3", force: :cascade do |t|
+  create_table "tasks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
     t.datetime "created_at", null: false
@@ -23,22 +23,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_26_061513) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb3", force: :cascade do |t|
-    t.string "provider", limit: 255, default: "email", null: false
-    t.string "uid", limit: 255, default: "", null: false
-    t.string "encrypted_password", limit: 255, default: "", null: false
-    t.string "reset_password_token", limit: 255
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.boolean "allow_password_change", default: false
     t.datetime "remember_created_at"
-    t.string "confirmation_token", limit: 255
+    t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email", limit: 255
-    t.string "name", limit: 255
-    t.string "nickname", limit: 255
-    t.string "image", limit: 255
-    t.string "email", limit: 255
+    t.string "unconfirmed_email"
+    t.string "name"
+    t.string "nickname"
+    t.string "image"
+    t.string "email"
     t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,3 +1,17 @@
 {
-    "eslint.workingDirectories": ["./client"],
+  "eslint.workingDirectories": ["./client"],
+  "eslint.run": "onSave",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "debug.openDebug": "openOnSessionStart",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.eol": "\n",
+  "[log]": {
+    "editor.wordWrap": "off",
+    "files.insertFinalNewline": true
+  }
 }

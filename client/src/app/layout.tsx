@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 // import { Inter } from 'next/font/google';
 import React from 'react';
+
+import { AppProviders } from '@/components/providers';
 import '@/app/global.css';
+import { Header } from '@/components/ui/layouts/Header';
 
 export const runtime = 'edge';
 
@@ -20,7 +23,12 @@ const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="ja">
       {/* <body className={inter.className}>{children}</body> */}
-      <body>{children}</body>
+      <body>
+        <AppProviders>
+          <Header />
+          {children}
+        </AppProviders>
+      </body>
     </html>
   );
 };
