@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Space } from '@/theme/space';
 
-import { Direction, Align, styles } from './style.css';
+import { Direction, Align, styles, Justify } from './style.css';
 
 type Props = {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ type Props = {
   marginInline?: Space;
   paddingBlock?: Space;
   paddingInline?: Space;
-  justifiContent?: Align;
+  justifyContent?: Justify;
   alignItems?: Align;
 };
 

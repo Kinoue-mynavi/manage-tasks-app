@@ -16,7 +16,16 @@ const ALIGN = {
   center: 'center',
   start: 'flex-start',
   end: 'flex-end',
-} as const satisfies Record<Align, CSSProperties['justifyContent']>;
+} as const satisfies Record<Align, CSSProperties['alignItems']>;
+
+export type Justify = Align | 'between';
+
+const JUSTIFY = {
+  center: 'center',
+  start: 'flex-start',
+  end: 'flex-end',
+  between: 'space-between',
+} as const satisfies Record<Justify, CSSProperties['justifyContent']>;
 
 export const styles = recipe({
   base: {
@@ -31,7 +40,7 @@ export const styles = recipe({
     gap: styleVariants(space, (s) => ({
       gap: s,
     })),
-    justifyContent: styleVariants(ALIGN, (a) => ({
+    justifyContent: styleVariants(JUSTIFY, (a) => ({
       justifyContent: a,
     })),
     alignItems: styleVariants(ALIGN, (a) => ({

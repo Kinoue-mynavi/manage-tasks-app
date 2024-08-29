@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 
-import { useSetCurrentUser } from '@/app/state/currentUser';
 import { HEADER_AUTH_KEY } from '@/constants/session';
 import { useCookie } from '@/hooks/useCookie';
+import { useSetCurrentUser } from '@/state/currentUser';
 
 import { fetchSession } from '.';
 

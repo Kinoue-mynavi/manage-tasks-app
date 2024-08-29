@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { useSetCurrentUser } from '@/app/state/currentUser';
 import { HEADER_AUTH_KEY } from '@/constants/session';
 import { useCookie } from '@/hooks/useCookie';
 import { LoginSchema } from '@/schemas/auth/login';
@@ -13,6 +12,7 @@ import { SignupSchema } from '@/schemas/auth/signup';
 import { login } from '@/services/auth/login';
 import { logout } from '@/services/auth/logout';
 import { signup } from '@/services/auth/signup';
+import { useSetCurrentUser } from '@/state/currentUser';
 import { showToast } from '@/utils/toast';
 
 /* 「認証処理 ⇒ Cookieセット ⇒ Stateの更新」と複合的な処理を行う必要があるため、一つのファイルで管理する */

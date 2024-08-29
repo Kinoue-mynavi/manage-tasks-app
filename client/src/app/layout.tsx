@@ -4,7 +4,9 @@ import React from 'react';
 
 import { AppProviders } from '@/components/providers';
 import '@/app/global.css';
+import { Footer } from '@/components/ui/layouts/Footer';
 import { Header } from '@/components/ui/layouts/Header';
+import { MainContent } from '@/components/ui/layouts/MainContent';
 
 export const runtime = 'edge';
 
@@ -26,7 +28,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <body>
         <AppProviders>
           <Header />
-          {children}
+          <MainContent>{children}</MainContent>
+          <Footer />
         </AppProviders>
       </body>
     </html>

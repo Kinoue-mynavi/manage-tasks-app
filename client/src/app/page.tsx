@@ -2,29 +2,26 @@
 
 import React from 'react';
 
+import { Button } from '@/components/ui/atoms/Button';
 import { Heading } from '@/components/ui/atoms/Heading';
-import { Link } from '@/components/ui/atoms/Link';
-import { Text } from '@/components/ui/atoms/Text';
+import { Container } from '@/components/ui/layouts/Container';
 
-import { useGetCurrentUser } from './state/currentUser';
-
-const Home: React.FC = () => {
-  const { currentUser } = useGetCurrentUser();
+const Home: React.FC = React.memo(() => {
   return (
-    <div>
-      <Heading as="h2">Hello World !!</Heading>
-      {currentUser ? (
-        <Text>
-          {`ログイン中のユーザ：${currentUser.name}さん (${currentUser.email})`}
-        </Text>
-      ) : (
-        <>
-          <Text>下記リンクよりログインしてください！</Text>
-          <Link href="/auth/login">ログインページへ</Link>
-        </>
-      )}
-    </div>
+    <section>
+      <Container>
+        <Container
+          direction="horizontal"
+          justifyContent="between"
+          alignItems="center"
+        >
+          <Heading as="h2">タスク一覧</Heading>
+          {/* モーダルで登録フォームを出したい */}
+          <Button onClick={() => {}}>タスク登録</Button>
+        </Container>
+      </Container>
+    </section>
   );
-};
+});
 
 export default Home;
